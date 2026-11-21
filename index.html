@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nilam Creations – The Digital Hub</title>
+    <meta
+      name="description"
+      content="Nilam Creations is The Digital Hub for simple, fast, privacy-friendly browser tools including Nilvid and FileMaker Tool. Built with care in India."
+    />
+
+    <!-- Favicon (uses the same Nilam Creations sapphire emblem) -->
+    <link rel="icon" type="image/png" href="/assets/aistudio/image_e51d730a.png" />
+    <link rel="apple-touch-icon" href="/assets/aistudio/image_e51d730a.png" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nilam Creations" />
+    <meta property="og:title" content="Nilam Creations – The Digital Hub" />
+    <meta
+      property="og:description"
+      content="Explore free, fast, privacy-friendly browser tools crafted by Nilam Creations — including Nilvid and FileMaker Tool."
+    />
+    <meta property="og:image" content="/assets/aistudio/image_e51d730a.png" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nilam Creations – The Digital Hub" />
+    <meta
+      name="twitter:description"
+      content="Explore free, fast, privacy-friendly browser tools crafted by Nilam Creations — including Nilvid and FileMaker Tool."
+    />
+    <meta name="twitter:image" content="/assets/aistudio/image_e51d730a.png" />
+
+    <!-- Google Fonts: Plus Jakarta Sans (Display) + DM Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Nilam Creations",
+        "alternateName": "The Digital Hub",
+        "description": "Independent digital studio crafting simple, fast, privacy-friendly browser tools including Nilvid and FileMaker Tool.",
+        "logo": "/assets/aistudio/image_e51d730a.png",
+        "founder": {
+          "@type": "Person",
+          "name": "Parth Prajapati",
+          "url": "https://parth-prajapati4539.netlify.app/"
+        }
+      }
+    </script>
+
+    <!-- Prevent theme flash: dark navy is the default -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('nilam-theme');
+          if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-[#F8FAFC] text-slate-900 dark:bg-[#050C1B] dark:text-slate-100 antialiased selection:bg-[#3FA9F5]/30 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

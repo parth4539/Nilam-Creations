@@ -1,0 +1,6 @@
+{
+  "name": "Nilam Creations",
+  "description": "Nilam Creations: The Digital Hub — simple, fast, privacy-friendly web tools built with care, including Nilvid and FileMaker Tool.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
