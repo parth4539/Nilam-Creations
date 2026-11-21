@@ -67,7 +67,7 @@ export function Navbar({ brand, theme, onToggleTheme }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 dark:border-[#1A315E]/80 bg-white/85 dark:bg-[#050C1B]/85 backdrop-blur-md transition-colors duration-200">
+    <header className="sticky top-0 z-50 border-b border-slate-200/45 dark:border-[#1A315E]/45 bg-white/80 dark:bg-[#050C1B]/80 backdrop-blur-md transition-colors duration-200">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-8 px-4 sm:px-6 lg:px-8">
         {/* Zone 1: Single-line Brand Wordmark + Sapphire Logo */}
         <a

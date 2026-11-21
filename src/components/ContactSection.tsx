@@ -48,13 +48,10 @@ export function ContactSection({ contact }: ContactSectionProps) {
   };
 
   return (
-    <section
-      id="contact"
-      className="border-t border-slate-200/80 dark:border-[#162B54] bg-[#F4F7FC] dark:bg-[#071124] py-12 sm:py-14"
-    >
+    <section id="contact" className="py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-6 rounded-3xl bg-gradient-to-br from-[#EAF1FF] to-[#F6F9FF] dark:from-[#0C1B3D] dark:to-[#08132B] p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <p className="text-xs font-semibold text-[#0F3D91] dark:text-[#3FA9F5]">
                 Contact
@@ -85,7 +82,7 @@ export function ContactSection({ contact }: ContactSectionProps) {
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="inline-flex min-h-[40px] items-center gap-1.5 rounded-xl border border-slate-200 dark:border-[#1E3A6E] bg-white dark:bg-[#0B1730] px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors hover:border-[#3FA9F5] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FA9F5]"
+                className="inline-flex min-h-[40px] items-center gap-1.5 rounded-xl bg-white/85 dark:bg-[#0B1730]/90 px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors hover:bg-white dark:hover:bg-[#11244D] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FA9F5]"
               >
                 {copied ? (
                   <>
@@ -107,7 +104,7 @@ export function ContactSection({ contact }: ContactSectionProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${social.name} (${social.handle})`}
-                  className="inline-flex min-h-[40px] items-center gap-1.5 rounded-xl border border-slate-200 dark:border-[#1E3A6E] bg-white dark:bg-[#0B1730] px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors hover:border-[#3FA9F5] hover:text-[#0F3D91] dark:hover:text-[#3FA9F5] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FA9F5]"
+                  className="inline-flex min-h-[40px] items-center gap-1.5 rounded-xl bg-white/85 dark:bg-[#0B1730]/90 px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors hover:bg-white dark:hover:bg-[#11244D] hover:text-[#0F3D91] dark:hover:text-[#3FA9F5] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FA9F5]"
                 >
                   <SocialIcon name={social.name} />
                   <span>{social.name}</span>

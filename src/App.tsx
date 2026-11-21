@@ -146,17 +146,25 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900 dark:bg-[#050C1B] dark:text-slate-100 transition-colors duration-200">
+    <div className="relative min-h-screen flex flex-col overflow-x-clip bg-gradient-to-b from-[#F1F6FF] via-[#F7FAFF] to-[#EFF4FC] text-slate-900 dark:from-[#07142E] dark:via-[#050C1B] dark:to-[#040916] dark:text-slate-100 transition-colors duration-200">
+      {/* Subtle continuous ambient sapphire glow across the whole page */}
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="animate-pulse-halo absolute -top-40 left-1/3 h-[460px] w-[460px] -translate-x-1/2 rounded-full bg-[#3FA9F5]/12 dark:bg-[#0F3D91]/28 blur-[130px]" />
+        <div className="animate-pulse-halo absolute top-[55%] right-[10%] h-[380px] w-[380px] rounded-full bg-[#0F3D91]/8 dark:bg-[#3FA9F5]/10 blur-[130px]" />
+      </div>
+
       <Navbar brand={BRAND_CONFIG} theme={theme} onToggleTheme={handleToggleTheme} />
 
-      <main className="flex-1">
+      <main className="relative flex-1">
         <ProductsSection brand={BRAND_CONFIG} products={PRODUCTS} />
         <WhySection features={WHY_NILAM_FEATURES} />
         <AboutSection brand={BRAND_CONFIG} />
         <ContactSection contact={CONTACT_CONFIG} />
       </main>
 
-      <Footer brand={BRAND_CONFIG} />
+      <div className="relative">
+        <Footer brand={BRAND_CONFIG} />
+      </div>
     </div>
   );
 }

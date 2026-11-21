@@ -41,17 +41,9 @@ export function ProductsSection({ brand, products }: ProductsSectionProps) {
   };
 
   return (
-    <section
-      id="products"
-      className="relative overflow-hidden border-b border-slate-200/80 dark:border-[#162B54] bg-gradient-to-b from-[#F1F6FF] via-[#F8FAFC] to-white dark:from-[#07142E] dark:via-[#050C1B] dark:to-[#050C1B]"
-    >
-      {/* Subtle Sapphire Ambient Glow */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="animate-pulse-halo absolute -top-40 left-1/3 h-[380px] w-[380px] -translate-x-1/2 rounded-full bg-[#3FA9F5]/12 dark:bg-[#0F3D91]/30 blur-[120px]" />
-      </div>
-
-      <div id="home" className="relative mx-auto max-w-6xl px-4 pt-6 pb-12 sm:px-6 sm:pt-8 sm:pb-14 lg:px-8">
-        {/* Minimal Hub Header */}
+    <section id="products" className="relative">
+      <div id="home" className="relative mx-auto max-w-6xl px-4 pt-8 pb-12 sm:px-6 sm:pt-10 sm:pb-16 lg:px-8">
+        {/* Clean Hub Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs font-semibold text-[#0F3D91] dark:text-[#3FA9F5]">
@@ -77,7 +69,7 @@ export function ProductsSection({ brand, products }: ProductsSectionProps) {
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search tools..."
               aria-label="Search tools"
-              className="h-10 w-full rounded-xl border border-slate-200 dark:border-[#1B315C] bg-white/90 dark:bg-[#0B1730] pl-9 pr-8 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors focus:border-[#3FA9F5] focus:outline-none focus:ring-2 focus:ring-[#3FA9F5]/30"
+              className="h-10 w-full rounded-xl border border-slate-200/80 dark:border-[#1B315C] bg-white/80 dark:bg-[#0B1730]/80 pl-9 pr-8 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors focus:border-[#3FA9F5] focus:outline-none focus:ring-2 focus:ring-[#3FA9F5]/30"
             />
             {searchQuery && (
               <button
@@ -92,8 +84,8 @@ export function ProductsSection({ brand, products }: ProductsSectionProps) {
           </div>
         </div>
 
-        {/* Clean Category Filter Strip */}
-        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/80 dark:border-[#162B54] pb-4">
+        {/* Filter Strip (no dividing border line) */}
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
           <div
             role="tablist"
             aria-label="Filter apps by category"
@@ -111,7 +103,7 @@ export function ProductsSection({ brand, products }: ProductsSectionProps) {
                   className={`min-h-[34px] rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FA9F5] ${
                     isActive
                       ? 'bg-[#0F3D91] text-white dark:bg-[#3FA9F5] dark:text-[#050C1B]'
-                      : 'bg-slate-100/80 dark:bg-[#0B1730] text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                      : 'bg-slate-200/60 dark:bg-[#0B1730]/80 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
                   {option.label}
@@ -127,7 +119,7 @@ export function ProductsSection({ brand, products }: ProductsSectionProps) {
 
         {/* Clickable Live Apps Grid */}
         {filteredProducts.length === 0 ? (
-          <div className="mt-8 rounded-2xl border border-slate-200 dark:border-[#1B315C] bg-white/70 dark:bg-[#0B1730]/60 p-8 text-center">
+          <div className="mt-8 rounded-2xl bg-white/70 dark:bg-[#0B1730]/60 p-8 text-center">
             <p className="font-display text-base font-semibold text-slate-900 dark:text-white">
               No matching apps found
             </p>
@@ -143,7 +135,7 @@ export function ProductsSection({ brand, products }: ProductsSectionProps) {
             </button>
           </div>
         ) : (
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filteredProducts.map((product) => {
               const isExternal = product.url.startsWith('http');
 
@@ -154,7 +146,7 @@ export function ProductsSection({ brand, products }: ProductsSectionProps) {
                   target={isExternal ? '_blank' : undefined}
                   rel={isExternal ? 'noopener noreferrer' : undefined}
                   aria-label={`Open ${product.name}`}
-                  className="group flex items-start gap-4 rounded-2xl border border-transparent hover:border-slate-200/90 dark:hover:border-[#1F3A70] bg-transparent hover:bg-white/90 dark:hover:bg-[#0B1730]/90 p-3.5 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FA9F5]"
+                  className="group flex items-start gap-4 rounded-2xl bg-white/65 dark:bg-[#0B1730]/55 hover:bg-white dark:hover:bg-[#0E1E40] p-4 shadow-[0_4px_20px_rgba(15,61,145,0.04)] dark:shadow-none transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(15,61,145,0.1)] dark:hover:shadow-[0_14px_32px_rgba(63,169,245,0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FA9F5]"
                 >
                   <AppLogo
                     id={product.id}
