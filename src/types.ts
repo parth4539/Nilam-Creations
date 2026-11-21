@@ -1,8 +1,17 @@
-export type ProductCategory = 'Video' | 'Files' | 'Portfolio' | 'Upcoming';
+export type ProductCategory = 'Video' | 'Files' | 'Utilities' | 'Portfolio';
 
 export type ProductStatus = 'Live' | 'Coming Soon';
 
-export type ProductIconKey = 'video' | 'files' | 'user' | 'sparkles';
+export type ProductIconKey =
+  | 'video'
+  | 'files'
+  | 'user'
+  | 'image'
+  | 'pdf'
+  | 'qr'
+  | 'palette'
+  | 'notes'
+  | 'screen';
 
 export interface ProductItem {
   id: string;

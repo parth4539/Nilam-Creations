@@ -13,32 +13,30 @@ import { WhySection } from './components/WhySection';
 import type { BrandConfig, ContactConfig, FeatureItem, ProductItem } from './types';
 
 /* ============================================================================
-   1. BRAND CONFIGURATION — Edit your brand name, tagline, logo path & hero copy
+   1. BRAND CONFIGURATION — Edit your brand name, tagline, logo path & copy
    ============================================================================ */
 const BRAND_CONFIG: BrandConfig = {
   name: 'Nilam Creations',
   tagline: 'The Digital Hub',
   // Replace this path anytime with your own logo file inside /public
   logoPath: '/assets/aistudio/image_e51d730a.png',
-  heroHeadline: 'Nilam Creations: The Digital Hub',
-  heroSubheadline:
-    'Simple, useful browser apps built with care — click any app below to launch directly with zero installs.',
+  heroHeadline: 'All Tools & Apps',
+  heroSubheadline: 'Simple, fast browser tools built with care.',
   founderName: 'Parth Prajapati',
   founderUrl: 'https://parth-prajapati4539.netlify.app/',
 };
 
 /* ============================================================================
    2. PRODUCT LIST — Add, edit, or reorder apps here in one place.
-      Optional `logoUrl`: point to a file in /public (e.g. '/logos/nilvid.png')
-      to override the built-in squircle app icon.
+      Change status to 'Live' and add your URL whenever a workshop tool launches.
+      Optional `logoUrl`: point to a custom icon inside /public (e.g. '/logos/nilvid.png').
    ============================================================================ */
 const PRODUCTS: ProductItem[] = [
   {
     id: 'nilvid',
-    name: 'Nilvid',
+    name: 'Nilvid Studio',
     category: 'Video',
-    description:
-      'Turns photos into animated videos with themes, transitions, and music directly in your browser.',
+    description: 'Turn photos into animated videos with themes, transitions, and music.',
     status: 'Live',
     url: 'https://nilvid.netlify.app/#studio',
     icon: 'video',
@@ -47,8 +45,7 @@ const PRODUCTS: ProductItem[] = [
     id: 'filemaker-tool',
     name: 'FileMaker Tool',
     category: 'Files',
-    description:
-      'Create, organize, and export clean project files and templates in seconds with zero server uploads.',
+    description: 'Create, organize, and export clean project files without server uploads.',
     status: 'Live',
     url: 'https://filemaker-tool.netlify.app/',
     icon: 'files',
@@ -57,21 +54,10 @@ const PRODUCTS: ProductItem[] = [
     id: 'founder-developer',
     name: 'Founder & Developer',
     category: 'Portfolio',
-    description:
-      'Explore Parth Prajapati’s engineering portfolio, featured builds, and web experiments behind Nilam Creations.',
+    description: 'Parth Prajapati’s engineering portfolio, builds, and web experiments.',
     status: 'Live',
     url: 'https://parth-prajapati4539.netlify.app/',
     icon: 'user',
-  },
-  {
-    id: 'more-coming-soon',
-    name: 'More Coming Soon',
-    category: 'Upcoming',
-    description:
-      'New focused browser apps for creators, students, and builders are taking shape in our workshop.',
-    status: 'Coming Soon',
-    url: '#contact',
-    icon: 'sparkles',
   },
 ];
 
@@ -82,29 +68,25 @@ const WHY_NILAM_FEATURES: FeatureItem[] = [
   {
     number: '01.',
     title: 'Free to Use',
-    description:
-      'Accessible tools designed so anyone can start creating right away without paywalls blocking core features.',
+    description: 'Open browser tools with core features available right away.',
     icon: 'gift',
   },
   {
     number: '02.',
     title: 'Fast in the Browser',
-    description:
-      'Lightweight web interfaces engineered to open instantly and run smoothly with zero software installation.',
+    description: 'Lightweight apps that open instantly with zero installations.',
     icon: 'zap',
   },
   {
     number: '03.',
     title: 'Privacy-Friendly',
-    description:
-      'Your photos, files, and creative work stay on your own device wherever possible—no unnecessary tracking.',
+    description: 'Files and media stay on your device whenever possible.',
     icon: 'shield',
   },
   {
     number: '04.',
     title: 'Made in India',
-    description:
-      'Thoughtfully crafted and maintained in India with clean engineering and global usability in mind.',
+    description: 'Crafted in India with clean engineering for users everywhere.',
     icon: 'globe',
   },
 ];
@@ -137,7 +119,6 @@ const CONTACT_CONFIG: ContactConfig = {
    MAIN APPLICATION
    ============================================================================ */
 export default function App() {
-  // Default theme is Dark Navy ('dark'); user preference persists in localStorage
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     try {
       return localStorage.getItem('nilam-theme') === 'light' ? 'light' : 'dark';
@@ -169,7 +150,6 @@ export default function App() {
       <Navbar brand={BRAND_CONFIG} theme={theme} onToggleTheme={handleToggleTheme} />
 
       <main className="flex-1">
-        {/* Product Library is placed first at the top for instant app launching */}
         <ProductsSection brand={BRAND_CONFIG} products={PRODUCTS} />
         <WhySection features={WHY_NILAM_FEATURES} />
         <AboutSection brand={BRAND_CONFIG} />
